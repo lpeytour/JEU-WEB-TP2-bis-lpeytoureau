@@ -7,7 +7,6 @@
 	</body>
 	<script>
 	var x=0;
-	var img
 	
 	function updateGame()
 	{
@@ -40,21 +39,12 @@
     
     
     function drawGame() {
-
-    
-    
 	  var canvas = document.getElementById('coin');
 	  var ctx = canvas.getContext('2d');
-	  
-	  
-	  ctx.clearRect(0,0,100,100);
 			  var img = new Image();
-		  img.src 
+		  img.onload = function(){
 				  ctx.drawImage(img,x,0,100,100,0,0,100,100); // cf wiki donne
-
-				      
       }
-
     img.src = '/images//coin-sprite-animation.png';
 
   }
