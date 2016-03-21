@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="coin"></canvas>
+	</body>
+	<script>
+	var x=0;
+	var img
+	
+	function updateGame()
+	{
+		
+		if (x<1000) {x+=100;}
+		else {x=0;}
+	}
+	
+	
+		var mainloop = function() {
+        updateGame();
+        drawGame();
+    };
+
+    var animFrame = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            window.oRequestAnimationFrame      ||
+            window.msRequestAnimationFrame     ||
+            null ;
+
+    var recursiveAnim = function() {
+        mainloop();
+        animFrame( recursiveAnim );
+    };
+
+    // start the mainloop
+    animFrame( recursiveAnim );
+    
+    
+    
+    function drawGame() {
+
+    
+    
+	  var canvas = document.getElementById('coin');
+	  var ctx = canvas.getContext('2d');
+	  
+	  
+	  ctx.clearRect(0,0,100,100);
+			  var img = new Image();
+		  img.src 
+				  ctx.drawImage(img,x,0,100,100,0,0,100,100); // cf wiki donne
+
+				      
+      }
+
+    img.src = '/images//coin-sprite-animation.png';
+
+  }
+  
+	 
+    </script> 
+</hmtl>
