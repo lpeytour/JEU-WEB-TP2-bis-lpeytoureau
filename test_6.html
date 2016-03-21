@@ -7,7 +7,8 @@
 	</body>
 	<script>
 	var x=0;
-	
+    	 var img = new Image();
+    	     img.src = 'images/coin-sprite-animation.png';
 	function updateGame()
 	{
 		
@@ -36,16 +37,16 @@
     // start the mainloop
     animFrame( recursiveAnim );
     
-    
+
     
     function drawGame() {
 	  var canvas = document.getElementById('coin');
 	  var ctx = canvas.getContext('2d');
-			  var img = new Image();
-		  img.onload = function(){
-				  ctx.drawImage(img,x,0,100,100,0,0,100,100); // cf wiki donne
-      };
-    img.src = '/images//coin-sprite-animation.png';
+
+		ctx.clearRect(0,0,100,100);
+	  ctx.drawImage(img,x,0,100,100,0,0,100,100); // cf wiki donne
+      
+
 
   }
   
